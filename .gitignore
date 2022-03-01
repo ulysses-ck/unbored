@@ -45,7 +45,8 @@ yarn-error.log*
 /.netlify
 
 # error and logs
-.log
+## ignore any file that hast the exntension .log
+**/*.log
 debug.log
 
 # sample

@@ -9,22 +9,7 @@ const handler: Handler = async (event, context) => {
 
 	return {
 		statusCode: 200,
-		body: JSON.stringify(
-			// {
-			// activity: {
-			// 	activity: 'Buy a new house decoration',
-			// 	accessibility: 'Few to no challenges',
-			// 	type: 'recreational',
-			// 	participants: 1,
-			// 	link: '',
-			// 	key: '3456114',
-			// 	duration: 'minutes',
-			// 	kidFriendly: true,
-			// 	price: '$$',
-			// },
-			// }
-			boredRandomData.data,
-		),
+		body: JSON.stringify(boredRandomData.data),
 	};
 };
 

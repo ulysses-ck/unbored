@@ -45,5 +45,5 @@ yarn-error.log*
 /.netlify
 
 # error and logs
-.log
+**/*.log
 debug.log
