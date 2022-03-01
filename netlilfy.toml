@@ -1,2 +1,5 @@
 [functions]
   directory = "netlify"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"

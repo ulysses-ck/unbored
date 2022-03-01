@@ -6,6 +6,7 @@
 		"airbnb/hooks",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
+		"react-hooks",
 		"prettier"
 	],
 	"parser": "@typescript-eslint/parser",
@@ -89,7 +90,9 @@
 			}
 		],
 		"no-unused-vars": "warn",
-		"no-console": "off"
+		"no-console": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn"
 	},
 	"settings": {
 		"react": {

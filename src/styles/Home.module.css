@@ -76,7 +76,7 @@
 .card {
 	margin: 1rem;
 	padding: 1.5rem;
-	text-align: left;
+	text-align: center;
 	color: inherit;
 	text-decoration: none;
 	border: 1px solid #eaeaea;
@@ -113,4 +113,15 @@
 		width: 100%;
 		flex-direction: column;
 	}
+}
+
+.link,
+.link:hover,
+.link:link,
+.link:visited {
+	text-decoration-style: dashed;
+	line-height: 4rem;
+	text-decoration-line: underline;
+	-moz-text-decoration-style: dashed;
+	-moz-text-decoration-line: underline;
 }

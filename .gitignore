@@ -47,3 +47,6 @@ yarn-error.log*
 # error and logs
 .log
 debug.log
+
+# sample
+sample-response.json
