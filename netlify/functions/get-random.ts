@@ -4,7 +4,7 @@ import axios from 'axios';
 const handler: Handler = async (event, context) => {
 	const boredRandomData = await axios({
 		// Endpoint that is hosted by a localtunnel, in a local machine
-		url: 'https://big-chicken-27.loca.lt/api/v2/activities',
+		url: 'https://unlucky-cheetah-5.loca.lt/api/v2/activities',
 		method: 'GET',
 	});
 

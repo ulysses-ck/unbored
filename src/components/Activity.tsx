@@ -5,21 +5,16 @@ import styles from './Activity.module.scss';
 import Spinner from './Spinner';
 import { Activity } from '../types/activity';
 
-import Colors from '../utils/Colors';
-
 type DataActivity = Activity | any;
-
-const RandomNumber = (): string => {
-	const color = Colors[Math.trunc(Math.random() * 13)];
-	return color;
-};
 
 const Activity = ({
 	data,
 	isFetching,
+	color,
 }: {
 	data: DataActivity;
 	isFetching: boolean;
+	color: string;
 }) => {
 	return (
 		<Fragment>
@@ -27,18 +22,30 @@ const Activity = ({
 				<Spinner />
 			) : data?.activity ? (
 				<div
-					key={data?.activity.key}
+					id={data.activity.key}
 					className={styles.card}
-					style={{ backgroundColor: RandomNumber() }}
+					style={{ backgroundColor: color }}
 				>
-					<h2>{data?.activity.activity}</h2>
-					<p>Accesibility: {data?.activity.accessibility}</p>
-					<p>Type: {data?.activity.type}</p>
-					<p>Participants: {data?.activity.participants}</p>
-					<p>Duration: {data?.activity.duration}</p>
-					<p>Kid Friendly: {data?.activity.kidFriendly}</p>
-					{/* If exist link, paint it, else just blank space */}
-					{data.activity.link ? <a href={data.activity.link}>More info</a> : ''}
+					<h2>{data.activity.activity}</h2>
+					<div className={styles.cardBody}>
+						<p>Accesibility: {data.activity.accessibility}</p>
+						<p>Type: {data.activity.type}</p>
+						<p>Participants: {data.activity.participants}</p>
+						<p>Duration: {data.activity.duration}</p>
+						{data.activity.kidFriendly !== undefined ? (
+							<p>Kid Friendly: {data.activity.kidFriendly ? 'Yes' : 'No'}</p>
+						) : (
+							''
+						)}
+						{/* If exist link, paint it, else just blank space */}
+						{data.activity.link ? (
+							<a href={data.activity.link} className={styles.link}>
+								More info
+							</a>
+						) : (
+							''
+						)}
+					</div>
 				</div>
 			) : (
 				''
