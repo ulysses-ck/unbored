@@ -18,7 +18,7 @@ export default function Home() {
 		useGetRandomActivityQuery('get-random');
 
 	// every time the button has a click refetch new data
-	// TODO show a message when the server is not responding
+	// TODO show a message when the server is not responding, for that use isError provided by useGetRandomQuery()
 	const handleClick = () => {
 		refetch();
 	};

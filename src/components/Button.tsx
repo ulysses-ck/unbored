@@ -9,6 +9,7 @@ const Button = ({
 	handleMethod?: MouseEventHandler;
 }) => (
 	<Fragment>
+		{/* Template for the button */}
 		<button type="button" className={styles.button} onClick={handleMethod}>
 			{message}
 		</button>

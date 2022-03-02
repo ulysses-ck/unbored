@@ -21,11 +21,14 @@ const Activity = ({
 			{isFetching ? (
 				<Spinner />
 			) : data?.activity ? (
+				// Card Container
 				<div
 					id={data.activity.key}
 					className={styles.card}
+					// Put the random Color that is passed from the index
 					style={{ backgroundColor: color }}
 				>
+					{/* Title */}
 					<h2>{data.activity.activity}</h2>
 					<div className={styles.cardBody}>
 						<p>Accesibility: {data.activity.accessibility}</p>
