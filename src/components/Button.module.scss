@@ -1,0 +1,15 @@
+.button {
+	padding: 1rem;
+	font: inherit;
+	background-color: #fff;
+	border: 0.15rem solid;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
+}
+.button:hover {
+	background-color: black;
+	color: white;
+}

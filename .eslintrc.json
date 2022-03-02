@@ -90,7 +90,7 @@
 			}
 		],
 		"no-unused-vars": "warn",
-		"no-console": "off",
+		"no-console": "off"
 	},
 	"settings": {
 		"react": {

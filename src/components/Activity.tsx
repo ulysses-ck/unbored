@@ -1,25 +1,36 @@
 import { Fragment } from 'react';
-import { useGetRandomActivityQuery } from '../features/activity/activitySlice';
-import styles from '../styles/Home.module.css';
 
-const Activity = () => {
-	const { data, isFetching, isSuccess, refetch, isLoading } =
-		useGetRandomActivityQuery('get-random', {});
+import styles from './Activity.module.scss';
 
-	const handleClick = () => {
-		refetch();
-	};
+import Spinner from './Spinner';
+import { Activity } from '../types/activity';
+
+import Colors from '../utils/Colors';
+
+type DataActivity = Activity | any;
+
+const RandomNumber = (): string => {
+	const color = Colors[Math.trunc(Math.random() * 13)];
+	return color;
+};
+
+const Activity = ({
+	data,
+	isFetching,
+}: {
+	data: DataActivity;
+	isFetching: boolean;
+}) => {
 	return (
 		<Fragment>
-			<button type="button" onClick={handleClick} className={styles.button}>
-				{isLoading
-					? 'Loading'
-					: isFetching
-					? 'Loading new activity!'
-					: 'Start Searching random activity'}
-			</button>
-			{data?.activity ? (
-				<div key={data?.activity.key}>
+			{isFetching ? (
+				<Spinner />
+			) : data?.activity ? (
+				<div
+					key={data?.activity.key}
+					className={styles.card}
+					style={{ backgroundColor: RandomNumber() }}
+				>
 					<h2>{data?.activity.activity}</h2>
 					<p>Accesibility: {data?.activity.accessibility}</p>
 					<p>Type: {data?.activity.type}</p>

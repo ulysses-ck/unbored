@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const handler: Handler = async (event, context) => {
 	const boredRandomData = await axios({
-		url: 'https://boredapi.loca.lt/api/v2/activities/',
+		// Endpoint that is hosted by a localtunnel, in a local machine
+		url: 'https://big-chicken-27.loca.lt/api/v2/activities',
 		method: 'GET',
 	});
 

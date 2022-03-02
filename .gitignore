@@ -51,3 +51,6 @@ debug.log
 
 # sample
 sample-response.json
+
+# environment
+.env
