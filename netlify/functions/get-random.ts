@@ -1,17 +1,14 @@
 import { Handler } from '@netlify/functions';
 import axios from 'axios';
+import https from 'https';
 
 const handler: Handler = async (event, context) => {
-	const boredRandomData = await axios({
-		// Endpoint that is hosted by a localtunnel, in my local machine
-		// Probably don't update the Database
-		// TODO make every request to the json db
+	const agent = new https.Agent({ rejectUnauthorized: false });
 
-		// Just for some time the app get data from the original database
-		// Original =>> https://github.com/drewthoennes/Bored-API
-		url: 'https://www.boredapi.com/api/v2/activities',
-		method: 'GET',
-	});
+	const boredRandomData = await axios.get(
+		'https://www.boredapi.com/api/v2/activities',
+		{ httpsAgent: agent },
+	);
 
 	return {
 		statusCode: 200,
